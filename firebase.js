@@ -1,5 +1,6 @@
-import { FadeInFromBottomAndroidSpec } from "@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionSpecs";
 import * as firebase from "firebase";
+import '@firebase/auth';
+import '@firebase/firestore';
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -15,7 +16,7 @@ const firebaseConfig = {
 let app;
 
 if (firebase.apps.length === 0) {
-  const firebaseApp = firebase.initializeApp(firebaseConfig);
+  app = firebase.initializeApp(firebaseConfig);
 } else {
   app = firebase.app();
 }
